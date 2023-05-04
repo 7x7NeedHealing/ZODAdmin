@@ -43,14 +43,14 @@
                                 反馈管理
                             </RouterLink>
                         </el-menu-item>
-                        <!-- <el-menu-item index="5">
-                            <RouterLink :to="{ name: 'notice' }" class="routerLink" active-class="routerLinkActive">
+                        <el-menu-item index="5">
+                            <a href="javascript:" @click="singOut()" class="routerLink" active-class="routerLinkActive">
                                 <el-icon>
-                                    <WarnTriangleFilled />
+                                    <Promotion />
                                 </el-icon>
-                                通告发布
-                            </RouterLink>
-                        </el-menu-item> -->
+                                退出登录
+                            </a>
+                        </el-menu-item>
                     </el-menu>
                 </el-col>
             </el-row>
@@ -66,7 +66,6 @@ import {
     UserFilled,
     Promotion,
     Comment,
-    WarnTriangleFilled,
     Share
 } from '@element-plus/icons-vue'
 
@@ -75,6 +74,9 @@ const handleOpen = (key: string, keyPath: string[]) => {
 }
 const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
+}
+const singOut = ()=>{
+    localStorage.setItem('token','');
 }
 </script>
     

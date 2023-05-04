@@ -55,16 +55,9 @@ interface feedback{
     contact:string,
     account:string
 };
-let form = reactive({
-    feedbackId: '',
-    title: '',
-    content: '',
-    contact:'',
-    account:''
-});
+
 let title = ref('');
 // 用于修改时确定修改谁的指针。
-let indexUser = ref(0);
 
 const multipleTableRef = ref<InstanceType<typeof ElTable>>()
 const multipleSelection = ref<feedback[]>([])
